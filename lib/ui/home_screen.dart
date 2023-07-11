@@ -1,3 +1,5 @@
+import 'package:allgodsaarti/ui/aarti_play_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -174,47 +176,58 @@ class _HomeState extends State<HomeScreen> {
         body: ListView.builder(
             itemCount: _allGods.length,
             itemBuilder: (BuildContext context, int index) {
-              return Card(
-                  child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    Row(
+              return GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(builder: (BuildContext context) => const AartiPlayScreen()),
+                    );
+                  },
+                  child: Card(
+                      child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 10),
+                    alignment: Alignment.center,
+                    child: Column(
                       children: [
-                        SizedBox(
-                          width: 90,
-                          height: 90,
-                          child: CircleAvatar(
-                            backgroundImage:
-                                AssetImage(_foundGods[index]['image']),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(_foundGods[index]['name'],
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700
-                              ),),
-                              SizedBox(
-                                height: 8,
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(_foundGods[index]['image']),
                               ),
-                              Text(_foundGods[index]['des']),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _foundGods[index]['name'],
+                                    style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  Text(_foundGods[index]['des']),
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.play_circle_fill))
+                          ],
                         ),
                       ],
                     ),
-                  ],
-                ),
-              ));
+                  )));
             }));
   }
 }
