@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "277221200762",
+    "firebase_url": "https://all-gods-aarti-df8f7-default-rtdb.firebaseio.com",
+    "project_id": "all-gods-aarti-df8f7",
+    "storage_bucket": "all-gods-aarti-df8f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277221200762:android:3cd4d7cd6aa6f0a90f3cc3",
+        "android_client_info": {
+          "package_name": "com.rts.godsaarti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs-zpLHoMhCII2W1MiXWLC80_G-KwZTq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
